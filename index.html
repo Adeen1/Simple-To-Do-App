@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <h2>This is a "To Do" app</h2>
+      <caption>
+        Please enter your today task below and click on "submit" button and
+        click on the task to remove it
+      </caption>
+      <br /><br />
+
+      <input type="text" id="screen" /><br />
+
+      <button
+        type="submit"
+        id="button"
+        onmouseenter="change_color()"
+        onmouseleave="reset_color()"
+      >
+        submit
+      </button>
+      <br />
+    </div>
+  </body>
+  <script>
+    let button1 = document.getElementById("button");
+    let input_feild = document.getElementById("screen");
+
+    let container1 = document.getElementById("container");
+    button1.addEventListener("click", function () {
+      var paragraph = document.createElement("p");
+      container1.appendChild(paragraph);
+      paragraph.innerText = input_feild.value;
+      input_feild.value = "";
+      paragraph.addEventListener("click", function () {
+        paragraph.style.textDecoration = "line-through";
+      });
+      paragraph.addEventListener("dblclick", function () {
+        container1.removeChild(paragraph);
+      });
+    });
+    const change_color = () => {
+      button1.style.backgroundColor = "yellow";
+    };
+    const reset_color = () => {
+      button1.style.backgroundColor = "white";
+    };
+  </script>
+</html>
