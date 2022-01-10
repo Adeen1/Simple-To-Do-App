@@ -1,12 +1,10 @@
-body{
-     background-color: black;
-     color: white;
+body {
+  background-color: black;
+  color: white;
 }
-#container{
-     text-align: center;
-
+#container {
+  text-align: center;
 }
-input{
-     width: 297px;
-
+input {
+  width: 297px;
 }
